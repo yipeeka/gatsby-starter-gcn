@@ -54,7 +54,7 @@ const TagTemplate = ({ data, pageContext }) => {
 
       <Container>
         <PageTitle small>
-         标签&ldquo;{title}&rdquo;有{numberOfPosts}篇博文：
+          标签&ldquo;{title}&rdquo;有{numberOfPosts}篇博文：
         </PageTitle>
 
         <CardList>
