@@ -51,6 +51,7 @@ export const query = graphql`
       edges {
         node {
           title
+          abstract
           id
           slug
           publishDate(formatString: "MMMM DD, YYYY")

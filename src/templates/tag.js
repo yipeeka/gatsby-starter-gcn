@@ -54,9 +54,7 @@ const TagTemplate = ({ data, pageContext }) => {
 
       <Container>
         <PageTitle small>
-          {numberOfPosts} Posts Tagged: &ldquo;
-          {title}
-          &rdquo;
+         标签&ldquo;{title}&rdquo;有{numberOfPosts}篇博文：
         </PageTitle>
 
         <CardList>
@@ -79,6 +77,7 @@ export const query = graphql`
       post {
         id
         title
+        abstract
         slug
         publishDate(formatString: "MMMM DD, YYYY")
         publishDateISO: publishDate(formatString: "YYYY-MM-DD")
