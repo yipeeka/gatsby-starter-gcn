@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import logo from '../images/icon-256.png'
 
 const Header = styled.header`
   background: ${props => props.theme.colors.base};
@@ -51,17 +52,18 @@ const Menu = () => {
         <ul>
           <li>
             <Link to="/" activeStyle={activeLinkStyle}>
+            <img src={logo} alt="" style={{height: 30, width: 40, display: 'inline'}} />
+              <span style={{fontSize: 24, }}>源鸣居</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/" activeStyle={activeLinkStyle}>
               Home
             </Link>
           </li>
           <li>
             <Link to="/about/" activeStyle={activeLinkStyle}>
               About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact/" activeStyle={activeLinkStyle}>
-              Contact
             </Link>
           </li>
         </ul>

@@ -43,7 +43,21 @@ const Title = styled.h1`
   width: 100%;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
   padding: 0 1rem;
-  top: 50%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+`
+const SubTitle = styled.h3`
+  font-size: 1.6em;
+  text-transform: capitalize;
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
+  padding: 0 1rem;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -58,6 +72,8 @@ const Hero = props => (
       backgroundColor={'#eeeeee'}
     />
     <Title>{props.title}</Title>
+    {props.subTitle && <SubTitle>{props.subTitle}</SubTitle>}
+    
   </Wrapper>
 )
 

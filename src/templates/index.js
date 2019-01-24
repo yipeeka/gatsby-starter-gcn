@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import CardList from '../components/CardList'
 import Card from '../components/Card'
+import Hero from '../components/Hero'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
@@ -11,9 +12,11 @@ import config from '../utils/siteConfig'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
-  const featuredPost = posts[0].node
   const { currentPage } = pageContext
+  const heroImage = data.allContentfulImage.edges[0].node.image
+  const subTitle = data.allContentfulImage.edges[0].node.subTitle
   const isFirstPage = currentPage === 1
+  console.log(heroImage)
 
   return (
     <Layout>
@@ -23,21 +26,15 @@ const Index = ({ data, pageContext }) => {
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
         </Helmet>
       )}
+      {isFirstPage && (
+        <Hero title={config.siteTitle} subTitle={subTitle} image={heroImage} height={'50vh'} />
+      )}
       <Container>
-        {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
-        ) : (
           <CardList>
             {posts.map(({ node: post }) => (
               <Card key={post.id} {...post} />
             ))}
           </CardList>
-        )}
       </Container>
       <Pagination context={pageContext} />
     </Layout>
@@ -67,6 +64,22 @@ export const query = graphql`
             childMarkdownRemark {
               html
               excerpt(pruneLength: 80)
+            }
+          }
+        }
+      }
+    }
+    allContentfulImage(
+      filter: {title: {eq : "Home Hero" }}
+    ) {
+      edges {
+        node {
+          title
+          subTitle
+          image {
+            title
+            fluid(maxWidth: 1800) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
         }

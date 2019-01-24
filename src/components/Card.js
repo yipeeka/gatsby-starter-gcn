@@ -15,7 +15,7 @@ const Post = styled.li`
     margin: 0 0 2vw 0;
   }
   @media screen and (min-width: ${props => props.theme.responsive.medium}) {
-    flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
+    flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
   }
   &:hover {
     background: ${props => props.theme.colors.tertiary};
