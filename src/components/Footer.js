@@ -1,4 +1,5 @@
 import React from 'react'
+import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import styled from 'styled-components'
 
 const Wrapper = styled.footer`
@@ -23,12 +24,15 @@ const List = styled.ul`
 
 const Item = styled.li`
   display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 0.25em 0;
   width: 100%;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     width: auto;
   }
   a {
+    display: block;
     font-weight: 600;
     transition: all 0.2s;
     color: ${props => props.theme.colors.base};
@@ -63,15 +67,14 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          源鸣居
+          源鸣居&nbsp;
         </a>{' '}
-        by{' '}
         <a
-          href="https://github.com/ryipeeka"
+          href="https://github.com/yipeeka"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Fractal Arts and Sciences
+          <LogoGithub />
         </a>
       </Item>
     </List>

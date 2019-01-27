@@ -30,6 +30,8 @@ const Nav = styled.nav`
   }
 
   a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: DarkGray;
     font-weight: 600;
@@ -52,8 +54,8 @@ const Menu = () => {
         <ul>
           <li>
             <Link to="/" activeStyle={activeLinkStyle}>
-            <img src={logo} alt="" style={{height: 30, width: 40, display: 'inline'}} />
-              <span style={{fontSize: 24, }}>源鸣居</span>
+            <img src={logo} alt="" style={{height: 30, width: 40, display: 'block'}} />
+              <span style={{fontSize: 24, display: 'block'}}>&nbsp;源鸣居</span>
             </Link>
           </li>
           <li>
