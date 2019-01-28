@@ -8,7 +8,7 @@ const List = styled.ul`
   margin: 0 auto;
   &::after {
     content: '';
-    flex: 0 0 32%;
+    flex: 0 0 49%;
   }
 `
 
