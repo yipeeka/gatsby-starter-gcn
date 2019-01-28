@@ -49,6 +49,11 @@ export const query = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       slug
+      metaDescription {
+        internal {
+          content
+        }
+      }
       publishDate(formatString: "MMMM DD, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
       tags {
